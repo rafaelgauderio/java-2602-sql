@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.devsuperior.uri2602.entities.Customer;
 import com.devsuperior.uri2602.projections.CustomerNameProjection;
+import com.devsuperior.uri2602.projections.CustomerNameStateProjection;
 
 @Repository
 public interface CustomerRepository extends JpaRepository <Customer, Long> {
@@ -18,5 +19,10 @@ public interface CustomerRepository extends JpaRepository <Customer, Long> {
 			+ "FROM customers "
 			+ "WHERE state = :state")
 	List<CustomerNameProjection> searchName(String state); 
+	
+	@Query(nativeQuery = true, value = "SELECT name, state "
+			+ "FROM customers "
+			+ "WHERE state = :state")
+	List<CustomerNameStateProjection> searchNameState(String state);
 
 }

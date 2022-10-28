@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.devsuperior.uri2602.dto.CustomerNameDTO;
 import com.devsuperior.uri2602.projections.CustomerNameProjection;
+import com.devsuperior.uri2602.projections.CustomerNameStateProjection;
 import com.devsuperior.uri2602.repositories.CustomerRepository;
 
 @SpringBootApplication
@@ -38,6 +39,12 @@ public class Uri2602Application implements CommandLineRunner {
 		List<CustomerNameDTO> result = list2.stream().map(c -> new CustomerNameDTO(c)).collect(Collectors.toList());
 		for (CustomerNameDTO object : result) {
 			System.out.println(object);
+		}
+		
+		System.out.println("\nListando clientes e estados do Rio de Janeiro usando DTO");
+		List<CustomerNameStateProjection> list3 = customerRepository.searchNameState("RJ");
+		for(CustomerNameStateProjection object : list3) {
+			System.out.println("Nome: " + object.getName() + ", Estado: " + object.getState());
 		}
 		
 		
