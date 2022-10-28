@@ -27,8 +27,7 @@ public class CustomerNameStateDTO {
 	
 	public void setName(String name) {
 		this.name = name;
-	}
-	
+	}	
 	
 
 	public String getState() {
@@ -41,7 +40,7 @@ public class CustomerNameStateDTO {
 
 	@Override
 	public String toString() {
-		return "CustomerNameStateDTO [Nome= " + name + ", estadp= " + state + "]";
+		return "CustomerNameStateDTO [Nome= " + name + ", estado= " + state + "]";
 	}
 	
 

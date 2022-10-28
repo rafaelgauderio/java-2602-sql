@@ -1,6 +1,8 @@
 package com.devsuperior.uri2602;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.devsuperior.uri2602.dto.CustomerNameDTO;
+import com.devsuperior.uri2602.dto.CustomerNameStateDTO;
 import com.devsuperior.uri2602.projections.CustomerNameProjection;
 import com.devsuperior.uri2602.projections.CustomerNameStateProjection;
 import com.devsuperior.uri2602.repositories.CustomerRepository;
@@ -41,12 +44,16 @@ public class Uri2602Application implements CommandLineRunner {
 			System.out.println(object);
 		}
 		
-		System.out.println("\nListando clientes e estados do Rio de Janeiro usando DTO");
-		List<CustomerNameStateProjection> list3 = customerRepository.searchNameState("RJ");
+		System.out.println("\nListando clientes e estados do Rio de Janeiro usando a entidade");
+		List<CustomerNameStateProjection> list3 = customerRepository.searchNameState("rj");
 		for(CustomerNameStateProjection object : list3) {
 			System.out.println("Nome: " + object.getName() + ", Estado: " + object.getState());
+		}	
+		System.out.println("\nListando clientes e estados do RJ usando DTO");
+		List<CustomerNameStateDTO> result2 = list3.stream().map( c -> new CustomerNameStateDTO(c)).collect(Collectors.toList());
+		for (CustomerNameStateDTO objeto : result2) {
+			System.out.println(objeto);
 		}
-		
 		
 	}
 }
