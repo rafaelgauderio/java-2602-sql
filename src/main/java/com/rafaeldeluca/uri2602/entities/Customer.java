@@ -1,4 +1,4 @@
-package com.devsuperior.uri2602.entities;
+package com.rafaeldeluca.uri2602.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

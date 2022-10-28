@@ -1,6 +1,6 @@
-package com.devsuperior.uri2602.dto;
+package com.rafaeldeluca.uri2602.dto;
 
-import com.devsuperior.uri2602.projections.CustomerNameProjection;
+import com.rafaeldeluca.uri2602.projections.CustomerNameProjection;
 
 public class CustomerNameDTO {
 	

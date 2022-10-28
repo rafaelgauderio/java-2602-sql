@@ -1,8 +1,6 @@
-package com.devsuperior.uri2602;
+package com.rafaeldeluca.uri2602;
 
 import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +8,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.devsuperior.uri2602.dto.CustomerNameDTO;
-import com.devsuperior.uri2602.dto.CustomerNameStateDTO;
-import com.devsuperior.uri2602.projections.CustomerNameProjection;
-import com.devsuperior.uri2602.projections.CustomerNameStateProjection;
-import com.devsuperior.uri2602.repositories.CustomerRepository;
+import com.rafaeldeluca.uri2602.dto.CustomerNameDTO;
+import com.rafaeldeluca.uri2602.dto.CustomerNameStateDTO;
+import com.rafaeldeluca.uri2602.projections.CustomerNameProjection;
+import com.rafaeldeluca.uri2602.projections.CustomerNameStateProjection;
+import com.rafaeldeluca.uri2602.repositories.CustomerRepository;
 
 @SpringBootApplication
 public class Uri2602Application implements CommandLineRunner {
@@ -31,7 +29,7 @@ public class Uri2602Application implements CommandLineRunner {
 		// O que for colocado no método run, vai ser executado no início da aplicação
 		
 		List<CustomerNameProjection> list = customerRepository.searchName("RS");		
-		System.out.println("\nClientes do Rio Grande do Sul");
+		System.out.println("\nRESULTADO SQL RAIZ\nClientes do Rio Grande do Sul");
 		
 		for (CustomerNameProjection object : list) {
 			System.out.println("Nome: " + object.getName());
@@ -54,6 +52,12 @@ public class Uri2602Application implements CommandLineRunner {
 		for (CustomerNameStateDTO objeto : result2) {
 			System.out.println(objeto);
 		}
+		
+		System.out.println("\n\nRESULTADO JPQL\nListando clientes e estados do RS");
+		List<CustomerNameStateDTO> result3 = customerRepository.search3("Rs");
+		for(CustomerNameStateDTO nickname : result3) {
+			System.out.println(nickname);
+		}		
 		
 	}
 }

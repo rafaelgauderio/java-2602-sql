@@ -1,4 +1,4 @@
-package com.devsuperior.uri2602.projections;
+package com.rafaeldeluca.uri2602.projections;
 
 public interface CustomerNameProjection {
 	

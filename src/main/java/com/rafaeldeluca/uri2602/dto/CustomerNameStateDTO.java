@@ -1,6 +1,6 @@
-package com.devsuperior.uri2602.dto;
+package com.rafaeldeluca.uri2602.dto;
 
-import com.devsuperior.uri2602.projections.CustomerNameStateProjection;
+import com.rafaeldeluca.uri2602.projections.CustomerNameStateProjection;
 
 public class CustomerNameStateDTO {
 	
@@ -40,7 +40,7 @@ public class CustomerNameStateDTO {
 
 	@Override
 	public String toString() {
-		return "CustomerNameStateDTO [Nome= " + name + ", estado= " + state + "]";
+		return "Customer [Nome= " + name + ", estado= " + state + "]";
 	}
 	
 
