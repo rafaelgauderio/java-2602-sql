@@ -18,7 +18,8 @@ VALUES
   (2,	'Antonio Carlos Mamel',	'Av. Pinheiros', 'Belo Horizonte',	'MG',	3500.50),
   (3,	'Luiza Augusta Mhor',	'Rua Salto Grande',	'Niteroi',	'RJ',	4000.00),	
   (4,	'Jane Ester',	'Av 7 de setembro',	'Erechim',	'RS',	800.00),
-  (5, 'Marcos Antônio dos Santos',	'Av Farrapos',	'Porto Alegre',	'RS',	4250.25);
+  (5, 'Marcos Antônio dos Santos',	'Av Farrapos',	'Porto Alegre',	'RS',	4250.25),
+  (6,	'Juliana Silva',	'Rua Pedro Carlos Augusto',	'Belo Horizonte',	'MG',	8500.00);
 
   
   /*  Execute this query to drop the tables */
